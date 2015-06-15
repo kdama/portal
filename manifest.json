@@ -1,0 +1,25 @@
+{
+  "name": "Portal",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": { "48": "./img/icon48.png",
+          "128": "./img/icon128.png" },
+  "description": "Portal system",
+  "background": {
+    "scripts": ["./js/portal.js"]
+  },
+  "options_page": "./options.html",
+  "page_action": {
+    "default_icon": "./img/icon19.png",
+    "default_title": "Portal Enabled"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://portal.nap.gsic.titech.ac.jp/GetAccess/Login?Template=idg_key*"],
+      "js": ["./js/jquery-1.7.min.js", "./js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "permissions": ["tabs", "https://portal.nap.gsic.titech.ac.jp/GetAccess/Login?Template=idg_key*"]
+}

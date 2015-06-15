@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Portal: Option</title>
+        <script type="text/javascript" src="./js/jquery-1.7.min.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/options.js"></script>
+        <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+        <link href="./css/sticky-footer.css" rel="stylesheet" type="text/css"></link>
+        <style>
+            input.cell {
+                width: 100%;
+            }
+            body {
+                min-width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Portal: Option</h1>
+                </div>
+
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Matrix</label>
+                    <div class="col-lg-10">
+                      <table class="table-hover table-condensed" id="matrix"></table>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Mode</label>
+                    <div class="btn-group col-lg-10" data-toggle="buttons">
+                        <label class="btn btn-default" rel="popover" data-placement="top" data-container="body" data-trigger="hover focus" data-original-title="操作なし" data-content="何も行いません。マトリクス コードのメモ帳などに使うと良いでしょう。">
+                            <input type="radio" name="options" id="mode_noop">No op.
+                        </label>
+                        <label class="btn btn-default" rel="popover" data-placement="top" data-container="body" data-trigger="hover focus" data-original-title="オートコンプリート" data-content="3 個の入力欄を自動で埋めます。その後、[OK] ボタンにフォーカスを移動します。">
+                           <input type="radio" name="options" id="mode_auto_complete">Auto-Complete
+                        </label>
+                        <label class="btn btn-default" rel="popover" data-placement="top" data-container="body" data-trigger="hover focus" data-original-title="オートコンプリート・オートログイン" data-content="3 個の入力欄を埋め、さらに [OK] ボタンをクリックします。全てを自動で行うことに注意してください。">
+                           <input type="radio" name="options" id="mode_auto_complete_login">Auto-Complete-Login
+                        </label>
+                    </div>
+                  </div>
+                </form>
+
+                <!-- <h2 class="lead">Tell Your Matrix</h2>
+                <table class="table-hover table-condensed" id="matrix">
+                </table>
+                <h2 class="lead">Switches</h2>
+                Auto-Complete
+                <div class="btn-group" data-toggle="buttons">
+                    <button type="button" class="btn btn-default">Yes</button>
+                    <button type="button" class="btn btn-default">No</button>
+                </div>
+                Auto-Complete
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default">Yes</button>
+                    <button type="button" class="btn btn-default">No</button>
+                </div>
+                 --><form class="form" role="form">
+                    <div class="form-group text-right">
+                        <a data-toggle="modal" href="#resetModal" class="btn btn-default">Reset</a>
+                        <a id="update" class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Save</a>
+<!--                         <input class="btn btn-primary" type="button" id="update" value="Update"/> -->
+                    </div>
+                </form>
+                <div class="modal modal-danger fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Confirmation</h4>
+                            </div>
+                            <div class="modal-body">
+                                Going to reset your matrix?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="reset" data-dismiss="modal">Reset</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Nope</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <p class="text-muted credit">Keep Your <em>Portal</em> Wide Open.</p>
+            </div>
+        </div>
+    </body>
+</html>
